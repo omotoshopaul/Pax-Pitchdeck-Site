@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,10 +18,30 @@
 <body class="font-['Manrope']">
     <div id="navbar" class="flex justify-between px-[7%] w-[100%] h-[60px] items-center bg-[#000000] shadow-[1px_2px_6px_rgba(248,85,34,0.15)] fixed z-30">
         <div class="sm:hidden flex text-[#d3d3d3]" id="Menu">
-<span class="material-symbols-outlined">
-menu
-</span>
-<p>Menu</p>
+<div class="sm:hidden relative text-[#d3d3d3]" id="Menu">
+  <button id="menuButton" class="flex items-center gap-1 focus:outline-none">
+    <span class="material-symbols-outlined text-[28px]">menu</span>
+    <p>Menu</p>
+  </button>
+  <div id="dropdownMenu" class="hidden absolute left-0 mt-2 w-40 bg-[#1a1a1a] text-[#d3d3d3] rounded-lg shadow-lg border border-[#f85522]/20 z-50">
+    <a href="#About" class="block px-4 py-2 hover:bg-[#2a2a2a] hover:text-[#f85522] transition-all ease-in-out">About</a>
+    <a href="#Mission" class="block px-4 py-2 hover:bg-[#2a2a2a] hover:text-[#f85522] transition-all ease-in-out">Mission</a>
+    <a href="#Articles" class="block px-4 py-2 hover:bg-[#2a2a2a] hover:text-[#f85522] transition-all ease-in-out">Articles</a>
+    <a href="#Footer" class="block px-4 py-2 hover:bg-[#2a2a2a] hover:text-[#f85522] transition-all ease-in-out">Contact</a>
+  </div>
+</div>
+<script>
+  const menuButton = document.getElementById("menuButton");
+  const dropdownMenu = document.getElementById("dropdownMenu");
+  menuButton.addEventListener("click", () => {
+    dropdownMenu.classList.toggle("hidden");
+  });
+  window.addEventListener("click", (e) => {
+    if (!menuButton.contains(e.target)) {
+      dropdownMenu.classList.add("hidden");
+    }
+  });
+</script>
         </div>
    <div class="max-sm:mx-auto">
      <a href="Home">
@@ -43,10 +63,10 @@ menu
     </div>
     <div id="About" class="pt-[60px] h-[600px] lg:h-[500px] bg-[#000000] px-7 flex max-md:flex-col
     max-md:items-center">
-<div class="md:w-[50%]">
+<div class="md:w-[48%]">
     <div class="h-[30px] w-[270px] flex items-center gap-1 justify-center rounded-2xl bg-[#2d3131] text-white text-[14px] mt-10 border-b-[1px] border-[rgba(248,85,34,0.3)] max-md:mx-auto shadow-[0px_4px_20px_rgba(248,85,34,0.3)]"><i class="fa-solid fa-fingerprint text-[#f85522]"></i><p>Powering Trusted Digital Identities</p></div>
 <h1 class="text-white text-5xl font-medium mt-7 max-md:text-center">The <span class="text-[#f85522] opacity-60 blur-xs">Password</span><span class="text-[#f85522] font-semibold"> Passwordless</span> Future</h1>
-<p class="text-[#b7b7b7] max-md:px-[65px] max-md:text-center mt-4 text-[15px] leading-[1.5]">At <span class="text-[#f85522]">Pax</span>, we’re redefining digital identity, giving you full control of your credentials on the blockchain. Secure, transparent, and truly yours. The future of identity is <span class="text-[#f85522]">Pax</span></p>
+<p class="text-[#b7b7b7] px-2 max-md:text-center mt-4 text-[15px] leading-[1.5]">At <span class="text-[#f85522]">Pax</span>, we’re redefining digital identity, giving you full control of your credentials on the blockchain. Secure, transparent, and truly yours. The future of identity is <span class="text-[#f85522]">Pax</span></p>
 </div>
     </div>
     <div id="Features" class="relative z-[3] px-7 top-[-150px] max-sm:top-[-65px] lg:top-[-95px]">
@@ -72,7 +92,7 @@ menu
 </div>
 </div>
     </div>
-    <div id="Mission" class="w-[100%] max-sm:h-[2770px] h-[2100px] bg-[#000000] mt-[-5%] lg:mt-[-2%]">
+    <div id="Mission" class="w-[100%] max-sm:h-[2790px] h-[2100px] bg-[#000000] mt-[-5%] lg:mt-[-2%]">
         <div class="flex flex-col text-center justify-center gap-4 pt-10 px-7">
             <p class="font-semibold text-white text-[32px]">Pax<span class="text-[#f85522]">’</span>s Mission<span class="text-[#f85522]">.</span></p>
             <p class="text-[#b7b7b7] text-[15px]"><span class="text-[#f85522]">Pax’s</span> mission is to empower individuals with secure, self-sovereign digital identities built on blockchain technology. We aim to eliminate data breaches, restore privacy, and give people full control of their online identities, creating a transparent, trusted, and decentralized future where identity verification is simple, secure, and truly user-owned.
@@ -96,7 +116,7 @@ menu
              <p id="roadmap" class="mt-13 mb-0 py-2 w-[200px] bg-[#fac6b70d] text-[#f85522] rounded-3xl outline-[1.5px] outline-[#f85522] border-[1.5px] border-[#fa987a] flex justify-center items-center gap-1 mx-auto font-medium hover:bg-[#ff4005] hover:text-white transition-all ease-in-out duration-300 cursor-pointer">Roadmap <i class="fa-solid fa-arrow-right mt-1"></i></p>
             </div>
 </div>
-<p class="font-semibold text-[32px] text-white  text-center">Latest Articles</p>
+<p class="font-semibold text-[32px] text-white text-center max-sm:mt-7">Latest Articles</p>
 <div id="Articles" class="flex justify-center gap-4 px-7 mt-5 flex-wrap">
     <div class="h-[170px] max-sm:w-[100%] sm:w-[45%] rounded-3xl lg:w-[46.5%] bg-[rgba(255,255,255,0.1)] border border-[#f8542239] shadow-[3px_3px_20px_rgba(248,85,34,0.1)] group hover:border-[#f8542277] transition-all ease-in-out duration-300 hover:shadow-[3px_3px_20px_rgba(248,85,34,0.2)] cursor-pointer flex flex-col justify-between pl-4 lg:pl-7 pr-5 py-4">
         <div class=" flex flex-col gap-2">
@@ -142,7 +162,7 @@ menu
     </div>
 </div>
 </div>
-<div class="flex max-md:flex-col p-7 max-md:py-9 justify-between items-center h-[1200px] md:h-[325px] lg w-full bg-gradient-to-b from-[#f4987b] to-black to-[117%]">
+<div class="flex max-md:flex-col p-7 max-md:py-9 justify-between items-center h-[1200px] md:h-[325px] lg w-full bg-gradient-to-b from-[#f4987b] to-black to-[117%]" id="Footer">
 <div class="h-[26%] w-full md:w-[41%] md:h-full bg-[rgba(0,0,0,0.73)] rounded-3xl py-5 px-7 flex flex-col justify-between">
 <div class="flex flex-col gap-2">
     <p class="text-white font-medium md:text-[26px] text-3xl leading-[1.1]">Subscribe To Our Newsletter</p>
